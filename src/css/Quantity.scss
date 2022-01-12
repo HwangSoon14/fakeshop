@@ -1,0 +1,25 @@
+.quantity {
+    max-width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    input {
+        max-width: 110px;
+        // outline: none;
+        // border: none;
+        // font-size: 
+        padding: 8px 16px;
+        margin: 0 10px;
+        border: 2px solid #028082;
+        border-radius: 5px;
+        font-family: inherit;
+            font-weight: 700;
+            text-align: center;
+    }
+    button {
+        background-color: white;
+        border-radius: 5px;
+        padding: 4px 8px;
+    }
+}

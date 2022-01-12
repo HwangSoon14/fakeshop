@@ -1,0 +1,20 @@
+.filterPrice {
+    min-width: 250px;
+    margin-left: 10%;
+    &__label {
+        font-size: 18px;
+        font-weight: 500;
+        display: inline-block;
+        margin: 5px 0 5px 2px;
+    }
+}
+.filterRating {
+    min-width: 250px;
+    // margin-left: 10px;
+    &__label {
+        font-size: 18px;
+        font-weight: 500;
+        display: inline-block;
+        margin: 5px 0 5px 2px;
+    }
+}

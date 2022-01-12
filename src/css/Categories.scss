@@ -1,0 +1,22 @@
+.category {
+    border-radius: 5px;
+    padding: 10px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    p {
+        font-weight: 700;
+        font-size: 20px;
+        margin: 25px 0;
+        margin-left: 15px;
+    }
+    span {
+        display: block;
+        font-weight: 500;
+        margin: 15px 5px;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: 0.2s linear color;
+        &:hover {
+            color: #028082;
+        }
+    }
+}

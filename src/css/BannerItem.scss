@@ -1,0 +1,40 @@
+.bnItem {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, #d1fdff, #dcfbff, #eaf9ff, #f6f8ff, #fcf9ff);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    &-img , &-content {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    &-img {
+        align-items: center;
+        overflow: hidden;
+        img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            object-position: left;
+        }
+    }
+    &-contentWrapper {
+        margin-top: 20%;
+    }
+    &-title {
+        max-width: 70%;
+        font-size: 60px;
+        font-weight: 700;
+        display: block;
+        margin: 30px 0;
+    }
+    &-desc {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+        max-width: 90%;
+    }
+}
