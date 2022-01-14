@@ -10,7 +10,6 @@ const cartSlice = createSlice({
         addToCart: (state, action) => {
             const item = action.payload;
             const thisIndex = state.products.findIndex(x => x.id === item.id);
-            console.log(thisIndex);
             if(thisIndex >= 0) {
                 state.products[thisIndex].quantity += item.quantity;
             }
@@ -21,7 +20,6 @@ const cartSlice = createSlice({
         },
         removeFromCart: (state , action) => {
             const id = action.payload;
-            console.log(id);
             const thisIndex = state.products.findIndex(x => x.id === id);
             state.count -= state.products[thisIndex].quantity;
             state.products.splice(thisIndex , 1);

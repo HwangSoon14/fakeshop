@@ -7,10 +7,8 @@ const TextInputField = ({ name, label }) => {
     control,
     formState: { errors },
   } = useFormContext();
-  const {formState} = useFormContext();
 
-  const hasError = errors[name] &&  formState.touchedFields[name];
-  console.log(formState.touchedFields[name]);
+  const hasError = errors[name];
   return (
     <>
       <Controller
@@ -22,7 +20,7 @@ const TextInputField = ({ name, label }) => {
             margin="normal"
             label={label}
             fullWidth
-            error={hasError}
+            error={!!hasError}
             helperText={errors[name]?.message}
           />
         )}

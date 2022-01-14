@@ -3,7 +3,6 @@ import "../css/Quantity.scss";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 const Quantity = ({ upDateQuantity, onIncrease, onDecrease , value}) => {
-  console.log(value);
   const [quantity, setQuantity] = useState(value || 1);
   useEffect(() => {
       if(value) {

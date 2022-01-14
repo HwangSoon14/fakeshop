@@ -16,7 +16,6 @@ const AdminPage = () => {
   const [isDelete , setIsDelete ] = useState(false);
   const [isUpdate , setIsUpdate ] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  console.log(products);
   useEffect(() => {
     if (user.email === "admin@gmail.com") {
       setIsAdmin(true);

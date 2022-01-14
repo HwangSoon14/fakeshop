@@ -14,7 +14,6 @@ const ProductDetail = () => {
   const hasUser = !!useSelector(state => state.user.users.email);
   const allProduct = useSelector((state) => state.products.products);
   const thisProduct = allProduct.find((x) => x.id === Number(productId));
-  console.log(thisProduct);
   const [quantity , setQuantity] = useState(1);
   const addToCartFunc = (thisProduct) => {
     if(hasUser) {
@@ -25,7 +24,6 @@ const ProductDetail = () => {
     }
   }
   const upDateQuantity = (newQuantity) => {
-    console.log(newQuantity);
     setQuantity(newQuantity)
   }
   return (
