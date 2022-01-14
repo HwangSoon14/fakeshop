@@ -17,8 +17,8 @@ const TextInputField = ({ name, label }) => {
         control={control}
         render={({ field  }) => (
           <TextField
-            margin="normal"
             {...field}
+            margin="normal"
             label={label}
             fullWidth
             error={!!hasError}

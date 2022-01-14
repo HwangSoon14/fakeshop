@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../css/Quantity.scss";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-const Quantity = ({ upDateQuantity, onIncrease, onDecrease }) => {
-  const [quantity, setQuantity] = useState(1);
+const Quantity = ({ upDateQuantity, onIncrease, onDecrease , value}) => {
+  const [quantity, setQuantity] = useState(value || 1);
 
   return (
     <div className="quantity">

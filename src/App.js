@@ -9,11 +9,11 @@ import { saveAllCategory, saveAllProduct } from './app/slice/productSlice';
 import Deals from './components/Deal';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import AdminPage from './features/Admin/pages/AdminPage';
 import ProductDetail from './features/Product/pages/ProductDetail';
 import User from './features/User/User';
 import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
-
 
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
         <Route path="/product/:productId" exact element={<ProductDetail />} />
         <Route path="/cart" exact element={<CartPage />}/>
         <Route path="/login" exact element={<User />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Footer />
     </div>

@@ -22,10 +22,8 @@ const cartSlice = createSlice({
         removeFromCart: (state , action) => {
             const id = action.payload;
             const thisIndex = state.products.findIndex(x => x.id === id);
-            if(thisIndex >= 0) {
-                state.products.splice(thisIndex , 1);
-                state.count = 0;
-            }
+            state.count--;
+            state.products.splice(thisIndex , 1);
         },
         increaseQuantity: (state, action) => {
             const id  = action.payload;

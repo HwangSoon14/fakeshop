@@ -1,0 +1,34 @@
+.notfound {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    &-container {
+        width: 50%;
+        height: 70%;
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &-imgContainer {
+        width: 100%;
+        height: 60%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-textContainer {
+        text-align: center;
+        span {
+            display: block;
+            font-weight: 500;
+            font-size: 30px;
+        }
+    }
+}

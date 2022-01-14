@@ -6,15 +6,23 @@ import Quantity from "../../../components/Quantity";
 import RatingCpn from "../../../components/RatingCpn";
 import "../../../css/ProductDetail.scss";
 import { addToCart} from '../../../app/slice/cartSlice'
+import { useSnackbar } from "notistack";
 const ProductDetail = () => {
   const { productId } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
+  const hasUser = !!useSelector(state => state.user.users.email);
   const allProduct = useSelector((state) => state.products.products);
   const thisProduct = allProduct.find((x) => x.id === Number(productId));
   console.log(thisProduct);
   const [quantity , setQuantity] = useState(1);
   const addToCartFunc = (thisProduct) => {
-    dispatch(addToCart({...thisProduct , quantity: quantity}));
+    if(hasUser) {
+      dispatch(addToCart({...thisProduct , quantity: quantity}));
+    }
+    else {
+      enqueueSnackbar('You have to login first.' , {variant: 'warning'})
+    }
   }
   const upDateQuantity = (newQuantity) => {
     console.log(newQuantity);

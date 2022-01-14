@@ -10,13 +10,10 @@ const CartItem = ({ item }) => {
     const handleRemoveFromCart = (id) => {
         dispatch(removeFromCart(id));
     }
-    
     const onIncreaseQuantity = (id) => {
-      console.log(id);
         dispatch(increaseQuantity(id));
     }
     const onDecreaseQuantity = (id) => {
-      console.log(id);
         dispatch(decreaseQuantity(id));
     }
   return (
@@ -39,7 +36,7 @@ const CartItem = ({ item }) => {
       </div>
       <div className="cartItem-right">
         <div className="cartItem-right__quantity">
-          <Quantity onIncrease={() => onIncreaseQuantity(item.id)} onDecrease={() => onDecreaseQuantity(item.id)}/>
+          <Quantity value={item.quantity} onIncrease={() => onIncreaseQuantity(item.id)} onDecrease={() => onDecreaseQuantity(item.id)}/>
         </div>
         <div className="cartItem-right__priceContainer">
           <span className="cartItem-right__price">${item.price}</span>

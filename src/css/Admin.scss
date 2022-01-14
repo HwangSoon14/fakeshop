@@ -1,0 +1,24 @@
+.admin {
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    background-image: linear-gradient(to right top, #ffffff, #d2d8e5, #9ab6ca, #5a97a7, #01787a);
+    &-container {
+        // margin-top: 20px;
+        width: 98%;
+        height: 100%;
+        padding: 20px 15px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+    }
+    &-btnContainer {
+        margin: 0 10px;
+        width: calc(100%/3 - 60px);
+    }
+   &__btn {
+       font-weight: 700;
+   }
+   
+}
+
