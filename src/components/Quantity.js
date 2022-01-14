@@ -3,8 +3,13 @@ import "../css/Quantity.scss";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 const Quantity = ({ upDateQuantity, onIncrease, onDecrease , value}) => {
+  console.log(value);
   const [quantity, setQuantity] = useState(value || 1);
-
+  useEffect(() => {
+      if(value) {
+        setQuantity(value);
+      }
+  }, [value])
   return (
     <div className="quantity">
       <div
@@ -25,14 +30,12 @@ const Quantity = ({ upDateQuantity, onIncrease, onDecrease , value}) => {
         </button>
       </div>
       <div className="quantity-value">
-        {
           <input
             type="text"
             readOnly
             value={quantity}
             onChange={(value) => setQuantity(value)}
-          />
-        }
+        />
       </div>
       <div
         className="quantity-plus"

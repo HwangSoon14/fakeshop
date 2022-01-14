@@ -21,8 +21,9 @@ const cartSlice = createSlice({
         },
         removeFromCart: (state , action) => {
             const id = action.payload;
+            console.log(id);
             const thisIndex = state.products.findIndex(x => x.id === id);
-            state.count--;
+            state.count -= state.products[thisIndex].quantity;
             state.products.splice(thisIndex , 1);
         },
         increaseQuantity: (state, action) => {
@@ -30,6 +31,7 @@ const cartSlice = createSlice({
             const thisIndex = state.products.findIndex(x => x.id === id);
             if(thisIndex >= 0) {
                 state.products[thisIndex].quantity += 1;
+                state.count++;
             }
         },
         decreaseQuantity: (state, action) => {
@@ -42,6 +44,7 @@ const cartSlice = createSlice({
                 }
                 else {
                 state.products[thisIndex].quantity -= 1;
+                state.count--;
                 }
             }
         },

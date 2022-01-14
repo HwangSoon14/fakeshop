@@ -31,7 +31,6 @@ const PasswordField = ({ label , name}) => {
           render={({ field }) => (
             <OutlinedInput
                 {...field}
-              id="password"
               type={showPassword ? "text" : "password"}
               endAdornment={
                 <InputAdornment position="end">

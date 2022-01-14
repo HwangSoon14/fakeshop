@@ -5,11 +5,12 @@ import { Controller, useFormContext } from "react-hook-form";
 const TextInputField = ({ name, label }) => {
   const {
     control,
-    formState: { errors , isDirty},
+    formState: { errors },
   } = useFormContext();
-  
-  const hasError = errors[name];
-  
+  const {formState} = useFormContext();
+
+  const hasError = errors[name] &&  formState.touchedFields[name];
+  console.log(formState.touchedFields[name]);
   return (
     <>
       <Controller
@@ -21,7 +22,7 @@ const TextInputField = ({ name, label }) => {
             margin="normal"
             label={label}
             fullWidth
-            error={!!hasError}
+            error={hasError}
             helperText={errors[name]?.message}
           />
         )}
