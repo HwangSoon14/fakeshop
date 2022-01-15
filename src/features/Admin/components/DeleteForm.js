@@ -27,6 +27,7 @@ const DeleteForm = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const methods = useForm({
+    mode: 'onChange',
     defaultValues: {
       id: "",
     },

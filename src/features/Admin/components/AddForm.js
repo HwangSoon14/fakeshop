@@ -6,8 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
 import TextInputField from "../../../components/form-control/TextInputField";
 import { Button } from "@mui/material";
-import { useSnackbar } from 'notistack';
 import { addNewProduct } from "../../../app/slice/productSlice";
+import { useSnackbar } from 'notistack';
 import { useNavigate } from "react-router-dom";
 
 const AddForm = () => {
@@ -58,6 +58,7 @@ const AddForm = () => {
   });
   const dispatch = useDispatch();
   const methods = useForm({
+    mode: 'onChange',
     defaultValues: {
       category: "",
       id: "",

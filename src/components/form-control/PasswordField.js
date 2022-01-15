@@ -9,8 +9,24 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
+import { makeStyles } from "@mui/styles";
 
-const PasswordField = ({ label , name}) => {
+const useStyles = makeStyles((theme) => ({
+  notErrorBorder: {
+    border: "3px solid #33eb91",
+    borderRadius: "4px",
+  },
+  errorBorder: {
+    border: "3px solid red",
+    borderRadius: "4px",
+  },
+  inherit: {
+    border: "0px solid black",
+  },
+}));
+
+const PasswordField = ({ label, name }) => {
+  const classes = useStyles();
   const {
     control,
     formState: { errors },
@@ -20,7 +36,10 @@ const PasswordField = ({ label , name}) => {
   const toggleShowPassword = () => {
     setShowPassword((x) => !x);
   };
+  const { formState } = useFormContext();
   const hasError = errors[name];
+  const hasTouched = formState.touchedFields[name];
+
   return (
     <>
       <FormControl margin="normal" fullWidth variant="outlined">
@@ -30,8 +49,16 @@ const PasswordField = ({ label , name}) => {
           control={control}
           render={({ field }) => (
             <OutlinedInput
-                {...field}
+              {...field}
               type={showPassword ? "text" : "password"}
+              InputProps={{ color: "success" }}
+              inputProps={
+                !!hasTouched
+                  ? !!hasError
+                    ? { className: classes.errorBorder }
+                    : { className: classes.notErrorBorder }
+                  : { className: classes.inherit }
+              }
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -44,11 +71,12 @@ const PasswordField = ({ label , name}) => {
                 </InputAdornment>
               }
             />
-            
           )}
           label={label}
         />
-        <FormHelperText error={!!hasError}>{errors[name]?.message}</FormHelperText>
+        <FormHelperText error={!!hasError}>
+          {errors[name]?.message}
+        </FormHelperText>
       </FormControl>
     </>
   );

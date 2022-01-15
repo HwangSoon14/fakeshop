@@ -25,6 +25,7 @@ const SignIn = ({onSwap}) => {
   const { enqueueSnackbar } = useSnackbar();
   let navigate = useNavigate();
     const methods = useForm({
+      mode: 'onChange',
     defaultValues: {
         email: "",
       password: "",

@@ -45,7 +45,9 @@ const SignUp = ({onSwap}) => {
     const dispatch = useDispatch();
     const [isLoading , setIsLoading] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
-    const methods = useForm({
+    const methods = useForm(
+      {
+        mode: 'onChange',
     defaultValues: {
       userName: "",
       email: "",

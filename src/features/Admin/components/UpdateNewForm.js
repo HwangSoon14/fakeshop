@@ -32,6 +32,7 @@ const UpdateNewForm = ({ product }) => {
   const { enqueueSnackbar } = useSnackbar();
   let navigate = useNavigate();
   const methods = useForm({
+    mode: 'onChange',
     defaultValues: {
       title: "",
       image: "",
