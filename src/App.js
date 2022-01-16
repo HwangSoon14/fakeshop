@@ -14,10 +14,11 @@ import ProductDetail from './features/Product/pages/ProductDetail';
 import User from './features/User/User';
 import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
-
+import ScrollToTopButton from './components/ScrollToTopButton'
 
 function App() {
   const [isLoading , setIsLoading] = useState(false);
+  const [isScrollAcrossLine , setIsScrollAcrossLine] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     const fecthData = async () => {
@@ -32,8 +33,27 @@ function App() {
     };
     fecthData();
   }, []);
-  
-  
+
+  const toggleScrollToTopButton = () => {
+    if(window.pageYOffset > 1050) {
+      setIsScrollAcrossLine(true);
+    }
+    else {
+      setIsScrollAcrossLine(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll" , toggleScrollToTopButton)
+    return () => window.removeEventListener("scroll" , toggleScrollToTopButton);
+  } , [])
+
+  const onScrollToCategory = () => {
+      window.scrollTo({
+        top: 850,
+        behavior: 'smooth'
+      });
+  }
+
   return (
     <div className="App">
       <Deals />
@@ -45,6 +65,7 @@ function App() {
         <Route path="/login" exact element={<User />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
+      {isScrollAcrossLine && <ScrollToTopButton onClick={onScrollToCategory}/>}
       <Footer />
     </div>
   );

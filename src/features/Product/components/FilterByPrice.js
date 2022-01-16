@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 import '../../../css/Filters.scss';
 const FilterByPrice = ({onChange}) => {
@@ -12,9 +12,10 @@ const FilterByPrice = ({onChange}) => {
   return (
     <div className="filterPrice">
         <span className="filterPrice__label">Filter By Price</span>
-      <FormControl fullWidth>
+      <FormControl fullWidth >
+        <InputLabel id="filter-by-price">Options</InputLabel>
         <Select
-          id="demo-simple-select"
+          id="filter-by-price"
           value={age}
           onChange={handleChange}
         >

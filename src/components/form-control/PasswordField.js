@@ -1,5 +1,6 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
+  FilledInput,
   FormControl,
   FormHelperText,
   IconButton,
@@ -42,13 +43,13 @@ const PasswordField = ({ label, name }) => {
 
   return (
     <>
-      <FormControl margin="normal" fullWidth variant="outlined">
+      <FormControl margin="normal" fullWidth variant="filled">
         <InputLabel htmlFor={name}>{label}</InputLabel>
         <Controller
           name={name}
           control={control}
           render={({ field }) => (
-            <OutlinedInput
+            <FilledInput
               {...field}
               type={showPassword ? "text" : "password"}
               InputProps={{ color: "success" }}

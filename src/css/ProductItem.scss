@@ -25,6 +25,7 @@
         }
     }
     &-imgContainer {
+        cursor: pointer;
         width: 100%;
         height: 60%;
         overflow: hidden;
@@ -46,6 +47,7 @@
         width: 100%;
         height: 25%;
         text-align: center;
+        cursor: pointer;
         &__title {
             font-weight: 500;
             padding: 5px 10px;

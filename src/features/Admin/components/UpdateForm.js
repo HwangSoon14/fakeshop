@@ -27,7 +27,7 @@ const UpdateForm = () => {
   const [isShowError, setIsShowError] = useState(false);
   const [isShowProduct, setIsShowProduct] = useState(false);
   const methods = useForm({
-    mode: 'onChange',
+    mode: 'onBlur',
     defaultValues: {
       id: "",
     },

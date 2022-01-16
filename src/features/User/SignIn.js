@@ -25,7 +25,7 @@ const SignIn = ({onSwap}) => {
   const { enqueueSnackbar } = useSnackbar();
   let navigate = useNavigate();
     const methods = useForm({
-      mode: 'onChange',
+      mode: 'onBlur',
     defaultValues: {
         email: "",
       password: "",
@@ -72,7 +72,7 @@ const SignIn = ({onSwap}) => {
                             <form onSubmit={methods.handleSubmit(handleSubmit)}>
                                 <TextInputField name="email" label="Email"/>
                                 <PasswordField name="password" label="Password"/>
-                                <Button type='submit' variant="contained" fullWidth>Login</Button>
+                                <Button style={{marginTop: 20}} type='submit' variant="contained" fullWidth>Login</Button>
                             </form>
                         </FormProvider>
                     </div>

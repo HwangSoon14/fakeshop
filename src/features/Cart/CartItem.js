@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../../css/CartItem.scss";
 import Quantity from "../../components/Quantity";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import { useDispatch } from "react-redux";
+import Zoom from '@mui/material/Zoom';
 import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../app/slice/cartSlice";
 const CartItem = ({ item }) => {
     const dispatch = useDispatch();
@@ -42,9 +43,11 @@ const CartItem = ({ item }) => {
           <span className="cartItem-right__price">${item.price}</span>
         </div>
         <div className="cartItem-right__trashContainer">
+        <Tooltip title="Remove" TransitionComponent={Zoom}>
             <IconButton className="cartItem-right__icon" onClick={() => handleRemoveFromCart(item.id)}>
                 <DeleteForeverIcon />
             </IconButton>
+        </Tooltip>
         </div>
       </div>
     </div>

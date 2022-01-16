@@ -52,6 +52,7 @@ table {
 body {
 	font-family: 'Red Hat Display', sans-serif;
 	width: 100vw;
+	position: relative;
 }
 button {
 	cursor: pointer;
@@ -59,6 +60,9 @@ button {
 input {
 	outline: none;
 	font-family: inherit;
+}
+html {
+	scroll-behavior: smooth;
 }
 
 
@@ -83,4 +87,11 @@ input {
 }
 .notErrorBorder {
 	border-top: 2px solid greenyellow;
+}
+.mw-80 {
+	max-width: 80%;
+}
+
+.font-roboto {
+	font-family: 'Roboto', sans-serif;
 }

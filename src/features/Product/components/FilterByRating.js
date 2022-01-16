@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import '../../../css/Filters.scss';
@@ -16,7 +16,9 @@ const FilterByRating = ({onChange}) => {
     <div className="filterRating">
         <span className="filterRating__label">Filter By Rating</span>
       <FormControl fullWidth>
+      <InputLabel id="filter-by-rating">Options</InputLabel>
         <Select
+        id="filter-by-rating"
           value={age}
           onChange={handleChange}
         >

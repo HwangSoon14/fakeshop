@@ -47,7 +47,7 @@ const SignUp = ({onSwap}) => {
     const { enqueueSnackbar } = useSnackbar();
     const methods = useForm(
       {
-        mode: 'onChange',
+        mode: 'onBlur',
     defaultValues: {
       userName: "",
       email: "",
@@ -98,7 +98,7 @@ const SignUp = ({onSwap}) => {
                                 <TextInputField name="email" label="Email"/>
                                 <PasswordField name="password" label="Password"/>
                                 <PasswordField name="retypePassword" label="Confirm Password"/>
-                                <Button type='submit' variant="contained" fullWidth>Register</Button>
+                                <Button style={{marginTop: 20}} type='submit' variant="contained" fullWidth>Register</Button>
                             </form>
                         </FormProvider>
                     </div>

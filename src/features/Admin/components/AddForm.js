@@ -58,7 +58,7 @@ const AddForm = () => {
   });
   const dispatch = useDispatch();
   const methods = useForm({
-    mode: 'onChange',
+    mode: 'onBlur',
     defaultValues: {
       category: "",
       id: "",

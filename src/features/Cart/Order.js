@@ -1,9 +1,5 @@
-import { Modal } from "@mui/material";
 import React from "react";
-import { useDispatch } from "react-redux";
-import { resetCart } from "../../app/slice/cartSlice";
 import AddButton from "../../components/AddButton";
-import CheckoutSuccess from "../../components/CheckoutSuccess";
 import "../../css/Order.scss";
 const Order = ({ totalPrice , handleOpen}) => {
   

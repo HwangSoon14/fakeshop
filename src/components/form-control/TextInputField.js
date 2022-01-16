@@ -1,7 +1,7 @@
-import { makeStyles } from '@mui/styles';
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   notErrorBorder: {
@@ -27,7 +27,6 @@ const TextInputField = ({ name, label }) => {
   const { formState} = useFormContext();
   const hasError =  errors[name];
   const hasTouched = formState.touchedFields[name];
-  console.log(!!hasTouched)
   return (
     <>
       <Controller
@@ -36,6 +35,7 @@ const TextInputField = ({ name, label }) => {
         render={({ field  }) => (
           <TextField
             {...field}
+            variant="filled"
             margin="normal"
             label={label}
             fullWidth

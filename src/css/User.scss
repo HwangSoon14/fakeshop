@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     align-items: stretch;
+    padding-top: 85px;
     &-left {
         width: 55%;
         height: 100%;
@@ -50,6 +51,7 @@
     &-swapContainer {
         margin: 20px;
         padding: 20px 0;
+        text-align: center;
         span {
             font-weight: 500;
             font-size: 18px;
