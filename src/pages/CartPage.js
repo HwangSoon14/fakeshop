@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { resetCart } from "../app/slice/cartSlice";
 import AddButton from "../components/AddButton";
 import CheckoutSuccess from "../components/CheckoutSuccess";
+import ModalConfirm from "../components/ModalConfirm";
 import "../css/CartPage.scss";
 import CartList from "../features/Cart/CartList";
 import EmptyCart from "../features/Cart/EmptyCart";
 import Order from "../features/Cart/Order";
 const CartPage = () => {
+  
   let navigate = useNavigate();
   const cartList = useSelector((state) => state.cart.products);
   const count = useSelector((state) => state.cart.count);
@@ -18,13 +20,17 @@ const CartPage = () => {
     0
   );
   const dispatch = useDispatch();
+  const [openConfirm, setOpenConfirm] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () =>{
     setOpen(true);
     dispatch(resetCart());
   } 
+  const handleCloseConfirmModal = () => setOpenConfirm(false);
   const handleClose = () => setOpen(false);
-  
+  const handleResetItem = () => {
+    dispatch(resetCart())
+  }
   return (
     <div className="cart">
       <div className="cart-titleContainer">
@@ -41,6 +47,13 @@ const CartPage = () => {
           <span className="cart-btnContainer__span">
             Shopping Bag ({count})
           </span>
+        </div>
+        <div className="cart-btnContainer-item">
+          <AddButton
+            text="RESET BAG"
+            onClickButton={() => setOpenConfirm(prev => !prev)}
+            disable={(cartList.length === 0) ? true : false}
+          />
         </div>
       </div>
       {cartList.length > 0 ? (
@@ -60,6 +73,7 @@ const CartPage = () => {
           <CheckoutSuccess onClose={handleClose} />
         </div>
       </Modal>
+      <ModalConfirm open={openConfirm} handleClose={handleCloseConfirmModal} onDelete={handleResetItem}/>
     </div>
   );
 };

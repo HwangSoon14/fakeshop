@@ -6,7 +6,11 @@ import { IconButton, Tooltip } from "@mui/material";
 import { useDispatch } from "react-redux";
 import Zoom from '@mui/material/Zoom';
 import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../app/slice/cartSlice";
+import ModalConfirm from "../../components/ModalConfirm";
 const CartItem = ({ item }) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
     const dispatch = useDispatch();
     const handleRemoveFromCart = (id) => {
         dispatch(removeFromCart(id));
@@ -17,6 +21,7 @@ const CartItem = ({ item }) => {
     const onDecreaseQuantity = (id) => {
         dispatch(decreaseQuantity(id));
     }
+
   return (
     <div className="cartItem">
       <div className="cartItem-left">
@@ -44,10 +49,11 @@ const CartItem = ({ item }) => {
         </div>
         <div className="cartItem-right__trashContainer">
         <Tooltip title="Remove" TransitionComponent={Zoom}>
-            <IconButton className="cartItem-right__icon" onClick={() => handleRemoveFromCart(item.id)}>
+            <IconButton className="cartItem-right__icon" onClick={() => setOpen(prev => !prev)}>
                 <DeleteForeverIcon />
             </IconButton>
         </Tooltip>
+        <ModalConfirm open={open} handleClose={handleClose} onDelete={() => handleRemoveFromCart(item.id) }/>
         </div>
       </div>
     </div>
@@ -55,3 +61,4 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
+// //onClick={() => handleRemoveFromCart(item.id)}

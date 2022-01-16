@@ -36,19 +36,19 @@ const AdminPage = () => {
      <div className="admin">
           <div className="admin-container">
               <div className="admin-btnContainer">
-                <Button onClick={onAddDisplay} variant="contained" startIcon={<AddCircleOutlineIcon />} size="large" fullWidth>
+                <Button style={{backgroundColor: '#028082'}} onClick={onAddDisplay} variant="contained" startIcon={<AddCircleOutlineIcon />} size="large" fullWidth>
                  ADD PRODUCT
                 </Button>
               {isAdd && <AddForm />}
               </div>
               <div className="admin-btnContainer">
-                <Button onClick={onDeleteDisplay} variant="contained" startIcon={<DeleteForeverIcon />} size="large" fullWidth>
+                <Button style={{backgroundColor: '#028082'}} onClick={onDeleteDisplay} variant="contained" startIcon={<DeleteForeverIcon />} size="large" fullWidth>
                  DELETE PRODUCT
                 </Button>
                 {isDelete && <DeleteForm /> }
               </div>
               <div className="admin-btnContainer">
-                <Button onClick={onUpdateDisplay} className="admin__btn" variant="contained" startIcon={<ModeEditOutlineIcon />} size="large" fullWidth>
+                <Button style={{backgroundColor: '#028082'}} onClick={onUpdateDisplay} className="admin__btn" variant="contained" startIcon={<ModeEditOutlineIcon />} size="large" fullWidth>
                  EDIT PRODUCT
                 </Button>
                 {isUpdate && <UpdateForm />}

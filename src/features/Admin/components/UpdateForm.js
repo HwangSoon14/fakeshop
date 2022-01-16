@@ -20,9 +20,6 @@ const schema = yup.object().shape({
 
 const UpdateForm = () => {
   const products = useSelector((state) => state.products.products);
-  const { enqueueSnackbar } = useSnackbar();
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
   const [product, setProduct] = useState(undefined);
   const [isShowError, setIsShowError] = useState(false);
   const [isShowProduct, setIsShowProduct] = useState(false);
@@ -56,7 +53,7 @@ const UpdateForm = () => {
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(handleSubmit)}>
               <TextInputField name="id" label="ID Product" />
-              <Button type="submit" variant="contained" fullWidth>
+              <Button style={{marginTop: 20 , backgroundColor: '#028082'}} type="submit" variant="contained" fullWidth>
                 Submit
               </Button>
             </form>

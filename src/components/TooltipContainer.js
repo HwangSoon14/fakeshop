@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "../css/TooltipContainer.scss";
+import EmptyPng from '../assets/emptycart.gif'
 const TooltipItem = () => {
   let navigate = useNavigate();
   const cartList = useSelector((state) => state.cart.products);
@@ -65,6 +66,12 @@ const TooltipItem = () => {
           >
             Xem Chi Tiết
           </Button>
+        </div>
+      )}
+      {cartListLimit.length === 0 && (
+        <div className="tooltip-imgContainer">
+          <img  src={EmptyPng} alt="gif" />
+          <span>Nothing in your bag</span>
         </div>
       )}
     </div>

@@ -13,8 +13,6 @@ import { useNavigate } from "react-router-dom";
 const AddForm = () => {
   const productsLength = useSelector((state) => state.products.products.length);
   const { enqueueSnackbar } = useSnackbar();
-  let navigate = useNavigate();
-  const [isLoading , setIsLoading] = useState(false);
   const schema = yup.object().shape({
     category: yup
       .string()
@@ -75,7 +73,6 @@ const AddForm = () => {
     
     dispatch(addNewProduct({item: value}))
     enqueueSnackbar("Add New Product Successfully", { variant: "success" });
-    navigate('/');
 
   };
   return (
@@ -93,7 +90,7 @@ const AddForm = () => {
               <TextInputField name="desc" label="Description" />
               <TextInputField name="rate" label="Rating" />
               <TextInputField name="count" label="Count Product" />
-              <Button type="submit" variant="contained" fullWidth>
+              <Button style={{marginTop: 20 , backgroundColor: '#028082'}}  type="submit" variant="contained" fullWidth>
                 Submit
               </Button>
             </form>

@@ -11,10 +11,11 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-intro">
         <span className="title">MY SHOP</span>
-        <p className="footer-desc desc">
-          There are many variations of passages of Lorem Ispum avaible , but the
+        <p className="footer-desc font-roboto">
+          {/* There are many variations of passages of Lorem Ispum avaible , but the
           majority have suffered alteration in some form , by injected humor ,
-          or randomised words which don't look even slightly believable
+          or randomised words which don't look even slightly believable */}
+          Work Hard. Have Fun. Make History
         </p>
         <div className="footer-intro__contact">
           <FacebookIcon className="footer__icon" fontSize="large" />

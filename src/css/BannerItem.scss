@@ -1,6 +1,6 @@
 .bnItem {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: radial-gradient(circle, #d1fdff, #dcfbff, #eaf9ff, #f6f8ff, #fcf9ff);
     display: flex;
     flex-wrap: nowrap;
@@ -17,7 +17,7 @@
         img {
             width: 90%;
             height: 90%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: left;
         }
     }

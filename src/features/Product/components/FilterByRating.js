@@ -21,6 +21,7 @@ const FilterByRating = ({onChange}) => {
         id="filter-by-rating"
           value={age}
           onChange={handleChange}
+          label="Options"
         >
           <MenuItem value={10}>Lowest</MenuItem>
           <MenuItem value={20}>Highest</MenuItem>

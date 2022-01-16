@@ -30,7 +30,6 @@ const schema = yup.object().shape({
 const UpdateNewForm = ({ product }) => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  let navigate = useNavigate();
   const methods = useForm({
     mode: 'onBlur',
     defaultValues: {
@@ -44,7 +43,6 @@ const UpdateNewForm = ({ product }) => {
   const handleSubmit = (value) => {
     dispatch(updateProduct({id: product.id , value}))
     enqueueSnackbar("Update Product Successfully", { variant: "success" });
-    navigate('/');
   };
   return (
     <div className="updateNewForm">
@@ -56,7 +54,7 @@ const UpdateNewForm = ({ product }) => {
               <TextInputField name="image" label="Url Image" />
               <TextInputField name="price" label="Price" />
               <TextInputField name="desc" label="Description" />
-              <Button type="submit" variant="contained" fullWidth>
+              <Button style={{marginTop: 20 , backgroundColor: '#028082'}} type="submit" variant="contained" fullWidth>
                 Confirm Update
               </Button>
             </form>

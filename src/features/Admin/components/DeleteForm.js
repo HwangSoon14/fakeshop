@@ -9,6 +9,7 @@ import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import "../../../css/DeleteForm.scss";
 import { deleteProduct } from "../../../app/slice/productSlice";
+import ModalConfirm from "../../../components/ModalConfirm";
 
 const schema = yup.object().shape({
   id: yup
@@ -19,12 +20,13 @@ const schema = yup.object().shape({
 });
 
 const DeleteForm = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false);
   const products = useSelector((state) => state.products.products);
   const { enqueueSnackbar } = useSnackbar();
   const [product, setProduct] = useState({});
   const [isShowError, setIsShowError] = useState(false);
   const [isShowProduct, setIsShowProduct] = useState(false);
-  let navigate = useNavigate();
   const dispatch = useDispatch();
   const methods = useForm({
     mode: 'onBlur',
@@ -47,7 +49,6 @@ const DeleteForm = () => {
   };
   const handleDeleteProduct = () => {
       dispatch(deleteProduct(product.id))
-      navigate('/');
       enqueueSnackbar("Delete Product Successfully", { variant: "success" });
   }
   return (
@@ -59,7 +60,7 @@ const DeleteForm = () => {
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(handleSubmit)}>
               <TextInputField name="id" label="ID Product" />
-              <Button type="submit" variant="contained" fullWidth>
+              <Button style={{marginTop: 20 , backgroundColor: '#028082'}} type="submit" variant="contained" fullWidth>
                 Submit
               </Button>
             </form>
@@ -83,7 +84,7 @@ const DeleteForm = () => {
                 <span>Title: {product.title}</span>
               </div>
             </div>
-            <Button onClick={handleDeleteProduct} variant="contained" fullWidth>
+            <Button style={{backgroundColor: '#028082'}} onClick={() => setOpen(prev => !prev)} variant="contained" fullWidth>
               CONFIRM DELETE
             </Button>
           </div>
@@ -96,6 +97,7 @@ const DeleteForm = () => {
           </div>
         )}
       </div>
+      <ModalConfirm open={open} handleClose={handleClose} onDelete={handleDeleteProduct}/>
     </div>
   );
 };
