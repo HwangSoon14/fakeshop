@@ -29,22 +29,22 @@ const ProductDetail = () => {
   return (
     <div className="productDetail">
       <div className="productDetail-imgContainer">
-        <img src={thisProduct.image} alt={thisProduct.id} />
+        <img src={thisProduct?.image} alt={thisProduct?.id} />
       </div>
       <div className="productDetail-content">
         <span className="productDetail-content__title">
-          {thisProduct.title}
+          {thisProduct?.title}
         </span>
-        <p className="productDetail-content__desc">{thisProduct.description}</p>
+        <p className="productDetail-content__desc">{thisProduct?.description}</p>
         <div className="productDetail-content__priceWrapper">
           <span className="productDetail-content__price">
-            $ {thisProduct.price}
+            $ {thisProduct?.price}
           </span>
-          <RatingCpn value={thisProduct.rating.rate} />
+          <RatingCpn value={thisProduct?.rating?.rate} />
         </div>
         <div className="productDetail-content__quantity">
             <Quantity upDateQuantity={upDateQuantity}/>
-            <span>Hiện đang có sẵn {thisProduct.rating.count} sản phẩm.</span>
+            <span>Hiện đang có sẵn {thisProduct?.rating?.count} sản phẩm.</span>
         </div>
         <AddButton text="ADD TO CART" onClickButton={() => addToCartFunc(thisProduct)}/>
       </div>

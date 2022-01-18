@@ -15,6 +15,7 @@ import User from './features/User/User';
 import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
 import ScrollToTopButton from './components/ScrollToTopButton'
+import NotFound from './components/NotFound';
 
 function App() {
   const [isLoading , setIsLoading] = useState(false);
@@ -64,6 +65,7 @@ function App() {
         <Route path="/cart" exact element={<CartPage />}/>
         <Route path="/login" exact element={<User />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {isScrollAcrossLine && <ScrollToTopButton onClick={onScrollToCategory}/>}
       <Footer />
