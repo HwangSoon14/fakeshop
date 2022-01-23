@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import AddButton from "../../../components/AddButton";
@@ -26,6 +26,18 @@ const ProductDetail = () => {
   const upDateQuantity = (newQuantity) => {
     setQuantity(newQuantity)
   }
+
+  useEffect(() => {
+    const onScrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    if(window.pageYOffset > 0) onScrollToTop();
+    
+  } , [])
+  
   return (
     <div className="productDetail">
       <div className="productDetail-imgContainer">

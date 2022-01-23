@@ -63,7 +63,7 @@ const SignIn = ({ onSwap }) => {
       <div className="user-container">
         <div className="user-textContainer">
           <Avatar src={GithubAvatar} alt="avt" />
-          <span className="user__text">Sign Up</span>
+          <span className="user__text">Sign In</span>
         </div>
         <div className="user-form">
           <FormProvider {...methods}>

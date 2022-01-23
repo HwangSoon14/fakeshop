@@ -32,6 +32,16 @@ const AdminPage = () => {
   const onUpdateDisplay = () => {
     setIsUpdate(prev => !prev);
   }
+  useEffect(() => {
+    const onScrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    if(window.pageYOffset > 0) onScrollToTop();
+    
+  } , [])
   return <div>{isAdmin ?
      <div className="admin">
           <div className="admin-container">

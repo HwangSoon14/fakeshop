@@ -19,7 +19,7 @@ const Header = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const handleLogOut = () => {
     dispatch(logout());
-    navigate("/");
+    navigate("/login");
   };
   useEffect(() => {
     if (user.email === "admin@gmail.com") {

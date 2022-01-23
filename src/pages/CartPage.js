@@ -1,5 +1,5 @@
 import { Modal } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resetCart } from "../app/slice/cartSlice";
@@ -31,6 +31,16 @@ const CartPage = () => {
   const handleResetItem = () => {
     dispatch(resetCart())
   }
+  useEffect(() => {
+    const onScrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    if(window.pageYOffset > 0) onScrollToTop();
+    
+  } , [])
   return (
     <div className="cart">
       <div className="cart-titleContainer">

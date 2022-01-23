@@ -16,7 +16,8 @@ const schema = yup.object().shape({
     .number()
     .required("Hãy nhập ID")
     .positive("Hãy nhập ID hợp lệ")
-    .integer("Hãy Nhập ID hợp lệ"),
+    .integer("Hãy Nhập ID hợp lệ")
+    .typeError('Hãy nhập giá trị hợp lệ'),
 });
 
 const DeleteForm = () => {

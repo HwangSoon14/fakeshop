@@ -24,7 +24,8 @@ const schema = yup.object().shape({
     .required("Hãy nhập mục này")
     .positive("Giá tiền không được âm")
     .moreThan(0, "Gía tiền phải lớn hơn 0")
-    .lessThan(10000000000, "Hãy nhập giá tiền hợp lệ"),
+    .lessThan(10000000000, "Hãy nhập giá tiền hợp lệ")
+    .typeError('Hãy nhập giá trị hợp lệ'),
 });
 
 const UpdateNewForm = ({ product }) => {

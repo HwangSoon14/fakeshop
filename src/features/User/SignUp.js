@@ -105,7 +105,7 @@ const SignUp = ({ onSwap }) => {
         </div>
         <div className="user-swapContainer">
           <span onClick={() => onSwap(true)}>
-            Don't have an account? Sign Up
+            You Already have an account ? Sign In
           </span>
         </div>
       </div>
