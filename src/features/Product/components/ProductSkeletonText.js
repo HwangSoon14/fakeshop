@@ -13,7 +13,7 @@ function ProductSkeletonText({length}) {
         <Box>
             {Array.from(new Array(length)).map((x,index) => (
                     <Box key={index} padding={2} >
-                            <Skeleton variant="text" width="90%" animation="wave"/>
+                            <Skeleton variant="text" style={{minWidth: '260px'}} width="90%" animation="wave"/>
                     </Box>
                 ))}
         </Box>
