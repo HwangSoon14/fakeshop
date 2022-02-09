@@ -1,6 +1,6 @@
 .header {
-    width: 100%;
-    height: 50px;
+    width: 100vw;
+    height: 60px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     padding: 10px 20px;
     display: flex;
@@ -14,8 +14,8 @@
     right: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     img {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         margin: 0 10px;
     }
     &-content {
@@ -57,5 +57,12 @@
             opacity: 1;
             visibility: visible;
         }
+    }
+}
+
+@media (max-width: 739px) {
+    img {
+        width: 15px;
+        height: 15px;
     }
 }

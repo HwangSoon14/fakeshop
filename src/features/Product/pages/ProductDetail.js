@@ -1,12 +1,12 @@
+import { useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from '../../../app/slice/cartSlice';
 import AddButton from "../../../components/AddButton";
 import Quantity from "../../../components/Quantity";
 import RatingCpn from "../../../components/RatingCpn";
 import "../../../css/ProductDetail.scss";
-import { addToCart} from '../../../app/slice/cartSlice'
-import { useSnackbar } from "notistack";
 const ProductDetail = () => {
   const { productId } = useParams();
   const { enqueueSnackbar } = useSnackbar();
@@ -37,6 +37,7 @@ const ProductDetail = () => {
     if(window.pageYOffset > 0) onScrollToTop();
     
   } , [])
+ 
   
   return (
     <div className="productDetail">

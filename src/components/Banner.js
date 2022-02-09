@@ -14,7 +14,6 @@ const Banner = () => {
   return (
     <div style={{ paddingTop: "10px" }}>
       <Swiper
-        
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{

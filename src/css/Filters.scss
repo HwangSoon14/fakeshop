@@ -18,3 +18,25 @@
         margin: 5px 0 10px 2px;
     }
 }
+@media (min-width: 740px) and (max-width: 1023px) {
+    .filterPrice {
+        min-width: 150px;
+    margin-left: 25%;
+    }
+    .filterRating {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 739px) {
+    .filter {
+        flex-direction: column;
+    }
+    .filterPrice , .filterRating {
+        width: 60%;
+    }
+    .filterPrice , .filterRating{
+        margin: 0 0 15px;
+    }
+    
+}

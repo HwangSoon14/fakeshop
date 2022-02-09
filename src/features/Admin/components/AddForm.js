@@ -5,6 +5,7 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
+import productApi from "../../../api/productApi";
 import { addNewProduct } from "../../../app/slice/productSlice";
 import TextInputField from "../../../components/form-control/TextInputField";
 import "../../../css/AddForm.scss";
@@ -72,11 +73,9 @@ const AddForm = () => {
     },
     resolver: yupResolver(schema),
   });
-  const handleSubmit = (value) => {
-    
-    dispatch(addNewProduct({item: value}))
-    enqueueSnackbar("Add New Product Successfully", { variant: "success" });
-
+  const handleSubmit = async (value) => {
+      dispatch(addNewProduct({item: value}))
+      enqueueSnackbar("Add New Product Successfully", { variant: "success" });
   };
   return (
     <div className="addForm">

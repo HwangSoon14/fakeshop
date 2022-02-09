@@ -22,3 +22,20 @@
         }
     }
 }
+@media (min-width: 740px) and (max-width: 1023px) {
+    .category{
+        p{
+            font-size: 16px;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 739px) {
+    .category {
+        width: 45%;
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+}

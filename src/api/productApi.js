@@ -10,18 +10,10 @@ const productApi = {
         const url = `/products?sort=desc`
         return axiosClient.get(url); 
     },
-    addProductToServe()
-    {
-        const url =`/products`;
-        return axiosClient.post(url, JSON.stringify(
-            {
-                title: 'test product',
-                price: 13.5,
-                description: 'lorem ipsum set',
-                image: 'https://i.pravatar.cc',
-                category: 'electronic'
-            }
-        ))
-    }
+    getProductById(id) {
+        const url = `/products/${id}`
+        return axiosClient.get(url)
+    },
+   
    }
    export default productApi;

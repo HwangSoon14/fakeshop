@@ -53,6 +53,7 @@ body {
 	font-family: 'Red Hat Display', sans-serif;
 	width: 100vw;
 	position: relative;
+	overflow-x: hidden;
 }
 button {
 	cursor: pointer;
@@ -64,7 +65,9 @@ input {
 html {
 	scroll-behavior: smooth;
 }
-
+* {
+	box-sizing: border-box;
+}
 
 //common css
 .title {
