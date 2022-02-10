@@ -1,6 +1,6 @@
 .productDetail {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 30px;
     padding: 15px 20px;
     display: flex;
@@ -8,7 +8,7 @@
     justify-content: space-between;
     padding-top: 85px;
     &-imgContainer , &-content {
-        height: 100%;
+        min-height: 100%;
     }
     &-imgContainer {
         width: 50%;
@@ -63,6 +63,88 @@
             color: #7b7a7b;
             font-size: 42px;
             
+        }
+    }
+}
+@media (min-width: 740px) and (max-width: 1023px) {
+    .productDetail {
+        &-content {
+            width: 48%;
+            &__title {
+                font-size: 26px;
+                max-width: 100%;
+            }
+            &__desc {
+                max-width: 100%;
+                margin: 20px 0;
+                font-size: 20px;
+            }
+            &__priceWrapper {
+                max-width: 100%;
+            }
+            &__price {
+                font-size: 22px;
+            }
+            &__quantity {
+                flex-direction: column;
+                margin: 20px 0;
+                max-width: 100%;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+@media (max-width: 739px) { 
+    .productDetail {
+        &-content {
+            width: 48%;
+            &__title {
+                font-size: 20px;
+                max-width: 100%;
+            }
+            &__desc {
+                max-width: 100%;
+                margin: 15px 0;
+                font-size: 16px;
+            }
+            &__priceWrapper {
+                max-width: 100%;
+            }
+            &__price {
+                font-size: 20px;
+            }
+            &__quantity {
+                flex-direction: column;
+                margin: 15px 0;
+                max-width: 100%;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .productDetail {
+        &-content {
+            &__price {
+                font-size: 16px;
+            }
+            &__quantity {
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .quantity {
+        max-width: 150px;
+        input {
+            max-width: 50px;
+            padding: 4px 8px;
+        }
+        button {
+            padding: 2px 4px;
         }
     }
 }

@@ -1,9 +1,10 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { useState } from "react";
 import '../../../css/Filters.scss';
 const FilterByPrice = ({onChange}) => {
 
-  const [age, setAge] = React.useState("");
+  const [age, setAge] = useState("");
   const handleChange = (event) => {
       if(!onChange) return;
     setAge(event.target.value);
@@ -12,7 +13,7 @@ const FilterByPrice = ({onChange}) => {
   return (
     <div className="filterPrice">
         <span className="filterPrice__label">Filter By Price</span>
-      <FormControl fullWidth >
+      <FormControl fullWidth>
         <InputLabel id="filter-by-price">Options</InputLabel>
         <Select
           id="filter-by-price"

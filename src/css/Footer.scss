@@ -1,5 +1,5 @@
 .footer {
-    width: 100%;
+    width: 100vw;
     padding: 40px 30px 5px 30px;
     min-height: 250px;
     background-color: #ecffff;
@@ -63,4 +63,53 @@
     span:hover {
         color: #028082;
     }
+}
+@media (max-width: 739px) {
+    .footer {
+        flex-direction: column;
+        &-intro {
+            text-align: center;
+            width: 100%;
+            font-size: 30px;
+        }
+        &-desc {
+            font-size: 20px;
+            max-width: 100%;
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+       &-link {
+           flex-direction: row;
+           flex-wrap: wrap;
+           width: 100%;
+           text-align: center;
+           &__text {
+               display: inline-block;
+               width: auto;
+               margin: 0 10px;
+           }
+       }
+       &-contact {
+        width: 100%;
+        text-align: center;
+        span {
+            margin-left: 0;
+        }
+        &__content {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+       }
+       &-title {
+           width: 100%;
+           display: block;
+           margin: 20px 0;
+       }
+    }
+    .title {
+        font-size: 30px;
+        
+    }
+    
 }
