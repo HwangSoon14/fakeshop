@@ -9,6 +9,7 @@ import "../css/Header.scss";
 import BasicMenu from "./BasicMenu";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import TooltipContainer from "./TooltipContainer";
+import TemporaryDrawer from "./Drawer";
 
 const Header = () => {
   let navigate = useNavigate();
@@ -69,6 +70,9 @@ const Header = () => {
           </Link>
           <TooltipContainer />
         </div>
+      </div>
+      <div className="header-drawer">
+              <TemporaryDrawer />
       </div>
     </div>
   );
